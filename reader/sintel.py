@@ -6,8 +6,8 @@ import struct
 import numpy as np
 
 # ======== PLEASE MODIFY ========
-sintel_root = r'path\to\your\Sintel'
-split_file = r'path\to\your\Sintel\Sintel_train_val.txt' # r'path\to\your\Sintel\Sintel_train_val_maskflownet.txt'
+sintel_root = r'/home/mask/datasets/sintel/'
+split_file = r'/home/mask/maskflownet/MaskFlownet/Sintel_train_val_maskflownet.txt' # r'path\to\your\Sintel\Sintel_train_val_maskflownet.txt'
 
 def list_data(path = None):
 	if path is None:

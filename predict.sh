@@ -1,1 +1,1 @@
-python predict_new_data.py ../flow_image_filepath.png MaskFlownet.yaml --image_1 ../../datasets/ChairsSDHom_extended/val/0000703-img_0.png --image_2 ../../datasets/ChairsSDHom_extended/val/0000703-img_1.png -g 0 -c 8caNov12
+python predict_new_data.py ../flow_image_filepath.png MaskFlownet.yaml --image_1 ../../datasets/sintel/training/final/cave_2/frame_0001.png --image_2 ../../datasets/sintel/training/final/cave_2/frame_0002.png -g 0 -c abbSep15
