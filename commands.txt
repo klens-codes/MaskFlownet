@@ -1,0 +1,1 @@
+python3 main.py MaskFlownet_ft.yaml --dataset_cfg chairsSDHom.yaml -g 0 -c 5adNov03 --clear_steps --batch 16
