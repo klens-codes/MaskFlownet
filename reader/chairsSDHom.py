@@ -19,7 +19,7 @@ def list_data(path = None,):
 	dataset['flow'] = glob.glob(os.path.join(path,"train","*.flo"))
 	dataset['flow'].extend(glob.glob(os.path.join(path,"val","*.flo")))
 	dataset['mask'] = glob.glob(os.path.join(path,"train","*occ_01.png"))
-	dataset['mask'] = glob.glob(os.path.join(path,"val","*occ_01.png"))
+	dataset['mask'].extend(glob.glob(os.path.join(path,"val","*occ_01.png")))
 	'''for part in parts:
 		path_image = os.path.join(path, part, 'image_' + sub_type, camera)
 		path_flow = os.path.join(path, part, 'flow', camera, orient)

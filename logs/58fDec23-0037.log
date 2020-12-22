@@ -1,0 +1,28 @@
+[2020/12/23 00:39:56] start=0, train=7223, val=224, host=ludwig, batch=3
+[2020/12/23 00:39:56] batch=16, config='MaskFlownet_ft.yaml', dataset_cfg='chairsSDHom.yaml', shard=1, gpu_device='0', checkpoint='5adNov03', clear_steps=True, network='MaskFlownet', debug=False, valid=False, predict=False, resize=''
+[2020/12/23 00:40:01] steps=1, epe=61.07687701376381, total_time=0.00
+[2020/12/23 00:40:28] steps=1, sintel.clean=1.4036227464675903, sintel.final=1.7398523092269897
+[2020/12/23 00:40:28] steps=2, epe=53.98431635593752, total_time=31.77
+[2020/12/23 00:40:29] steps=3, epe=52.26466604332376, total_time=15.67
+[2020/12/23 00:40:29] steps=4, epe=52.220126548399406, total_time=10.32
+[2020/12/23 00:40:30] steps=5, epe=58.562935348325446, total_time=7.66
+[2020/12/23 00:40:30] steps=6, epe=52.475697129960096, total_time=6.06
+[2020/12/23 00:40:30] steps=7, epe=49.74778425706598, total_time=4.99
+[2020/12/23 00:40:31] steps=8, epe=49.6365080442112, total_time=4.24
+[2020/12/23 00:40:31] steps=9, epe=49.720107935074225, total_time=3.67
+[2020/12/23 00:40:32] steps=10, epe=51.23347577214595, total_time=3.23
+[2020/12/23 00:40:32] steps=11, epe=49.26088350847248, total_time=2.88
+[2020/12/23 00:40:33] steps=12, epe=56.42123071606505, total_time=2.60
+[2020/12/23 00:40:33] steps=13, epe=56.05420578164507, total_time=2.36
+[2020/12/23 00:40:33] steps=14, epe=55.00719447916194, total_time=2.16
+[2020/12/23 00:40:34] steps=15, epe=53.47520702927258, total_time=1.99
+[2020/12/23 00:40:34] steps=16, epe=53.725741601321594, total_time=1.85
+[2020/12/23 00:40:35] steps=17, epe=55.43471594439685, total_time=1.72
+[2020/12/23 00:40:35] steps=18, epe=54.494038749571736, total_time=1.61
+[2020/12/23 00:40:36] steps=19, epe=54.749600654995405, total_time=1.51
+[2020/12/23 00:40:36] steps=20, epe=56.547380358250216, total_time=1.42
+[2020/12/23 00:40:49] steps=50, epe=55.53323075627939, total_time=0.57
+[2020/12/23 00:41:11] steps=100, epe=52.7326276807165, total_time=0.45
+[2020/12/23 00:41:32] steps=150, epe=50.50274499258427, total_time=0.44
+[2020/12/23 00:42:00] steps=150, sintel.clean=3.6387455463409424, sintel.final=4.282258987426758
+[2020/12/23 00:42:22] steps=200, epe=48.46872940812505, total_time=0.55

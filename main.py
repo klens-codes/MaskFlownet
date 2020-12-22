@@ -9,6 +9,8 @@ import hashlib
 import socket
 import subprocess as sp
 import skimage.io
+from network import frame_utils, flo_viz
+
 def get_gpu_memory():
   _output_to_list = lambda x: x.decode('ascii').split('\n')[:-1]
 
@@ -385,17 +387,18 @@ elif dataset_cfg.dataset.value == "chairsSDHom":
         # print(len(things3d_dataset['flow'][:samples:args.shard]))
         print(chairsSDHom_dataset['flow'][0])
         from pympler.asizeof import asizeof
-        #trainImg1 = [cv2.imread(file).astype('uint8') for file in chairsSDHom_dataset['image_0'][:int(len(chairsSDHom_dataset["image_0"])*2/3)]]
-        trainImg1 = [file for file in chairsSDHom_dataset['image_0']]
+        trainImg1 = [cv2.imread(file).astype('uint8') for file in chairsSDHom_dataset['image_0'][:int(len(chairsSDHom_dataset["image_0"])*1/3)]]
+        #trainImg1 = [file for file in chairsSDHom_dataset['image_0']]
         #print(asizeof(trainImg1[0]))
         #print(asizeof(trainImg1))
-        #trainImg2 = [cv2.imread(file).astype('uint8') for file in chairsSDHom_dataset['image_1'][:int(len(chairsSDHom_dataset["image_0"])*2/3)]]
-        trainImg2 = [file for file in chairsSDHom_dataset['image_1']]
+        trainImg2 = [cv2.imread(file).astype('uint8') for file in chairsSDHom_dataset['image_1'][:int(len(chairsSDHom_dataset["image_0"])*1/3)]]
+        #trainImg2 = [file for file in chairsSDHom_dataset['image_1']]
         #print(asizeof(trainImg2[0]))
         #print(asizeof(trainImg2))
-        #trainFlow = [chairsSDHom.load(file).astype('float16') for file in chairsSDHom_dataset['flow'][:int(len(chairsSDHom_dataset["image_0"])*2/3)]]
-        trainFlow = [file for file in chairsSDHom_dataset['flow']]
-        trainMask = [file for file in chairsSDHom_dataset['mask']]
+        trainFlow = [chairsSDHom.load(file).astype('float16') for file in chairsSDHom_dataset['flow'][:int(len(chairsSDHom_dataset["image_0"])*1/3)]]
+        #trainFlow = [file for file in chairsSDHom_dataset['flow']]
+        trainMask = [sintel.load(file).astype('uint8') for file in chairsSDHom_dataset['mask'][:int(len(chairsSDHom_dataset["image_0"])*1/3)]]
+        #trainMask = [file for file in chairsSDHom_dataset['mask']]
         #print(asizeof(trainFlow[0]))
         #print(asizeof(trainFlow))
         trainSize = len(trainFlow)
@@ -514,15 +517,19 @@ from threading import Thread
 from queue import Queue
 
 def iterate_data(iq, dataset):
-    if dataset_cfg.dataset.value == 'chairsSDHom' or dataset_cfg.dataset.value == "things3d":
+    if dataset_cfg.dataset.value == 'chairsSDHom2' or dataset_cfg.dataset.value == "things3d":
         gen = index_generator(len(dataset[0]))
-        #print("dataset",dataset)
         while True:
             i = next(gen)
             data = [item[i] for item in dataset]
             #print(data)
             if dataset_cfg.dataset.value == "chairsSDHom":
-                data = [skimage.io.imread(data[0]),skimage.io.imread(data[1]),chairsSDHom.load(data[2]),skimage.io.imread(data[3])]
+                print(data[2])
+                data = [skimage.io.imread(data[0]),skimage.io.imread(data[1]),flo_viz.read_flow(str(data[2])),skimage.io.imread(data[3])]
+                cv2.imwrite("./flow.png",flo_viz.flow_to_image(flo_viz.read_flow(str(data[2]))))
+                cv2.imwrite("./img0.png",skimage.io.imread(data[0]))
+                cv2.imwrite("./mask.png",skimage.io.imread(data[3]))
+                print("5"+5)
             elif dataset_cfg.dataset.value == "things3d":
                 data = [cv2.imread(data[0]).astype('uint8'),skimage.io.imread(data[1]).astype('uint8'),things3d.load(data[2]).astype('float16')]
             space_x, space_y = data[0].shape[0] - orig_shape[0], data[0].shape[1] - orig_shape[1]
@@ -540,6 +547,7 @@ def iterate_data(iq, dataset):
             data = [item[i] for item in dataset]
             space_x, space_y = data[0].shape[0] - orig_shape[0], data[0].shape[1] - orig_shape[1]
             crop_x, crop_y = space_x and np.random.randint(space_x), space_y and np.random.randint(space_y)
+            #print(crop_x,crop_y,space_x,space_y)
             data = [np.transpose(arr[crop_x: crop_x + orig_shape[0], crop_y: crop_y + orig_shape[1]], (2, 0, 1)) for arr in data]
             # vertical flip
             if np.random.randint(2):
@@ -601,8 +609,8 @@ while True:
                 now = time.time()
                 img1, img2, flow = [batch[i] for i in range(3)]
                 train_log = pipe.train_batch(img1, img2, flow, geo_aug, color_aug)
-                if steps%100==0 or steps ==1:
-                    print("time taken=",time.time()-now," | steps=",steps,"| cpu=",psutil.cpu_percent(),"| ram=",psutil.virtual_memory().available * 100 / psutil.virtual_memory().total,"| gpu=",get_gpu_memory())
+                #if steps%100==0 or steps ==1:
+                #    print("time taken=",time.time()-now," | steps=",steps,"| cpu=",psutil.cpu_percent(),"| ram=",psutil.virtual_memory().available * 100 / psutil.virtual_memory().total,"| gpu=",get_gpu_memory())
         # update log
         if steps <= 20 or steps % 50 == 0:
                 train_avg.update(train_log)

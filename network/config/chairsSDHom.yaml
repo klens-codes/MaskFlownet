@@ -1,8 +1,8 @@
 validation_steps:
-  100
+  150
 
 checkpoint_steps:
-  500
+  150
 
 dataset:
   chairsSDHom
