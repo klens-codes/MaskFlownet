@@ -1,0 +1,276 @@
+[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K_21Dec2020_chairsSDHom_finetune 
+(base) [01;32mpatel@ludwig[00m:[01;34m/data2/opticalflow/rnd/opticalflow/maskflownet/maskflownet_klens[00m$ nano .[Kg[K.gitignore 
+[?2004h[?1049h[22;0;0t[1;53r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[51;95H(B[0;7m[ Reading... ](B[m[51;94H(B[0;7m[ Read 49 lines ](B[m[H(B[0;7m  GNU nano 4.8                                                                                    .gitignore                                                                                               [1;202H(B[m[52d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[97G(B[0;7mM-U(B[m Undo[52;113H(B[0;7mM-A(B[m Mark Text   (B[0;7mM-](B[m To Bracket  (B[0;7mM-Q(B[m Previous    (B[0;7m^B(B[m Back[52;177H(B[0;7m^◀(B[m Prev Word[53d(B[0;7m^X(B[m Exit[53;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line   (B[0;7mM-E(B[m Redo[53;113H(B[0;7mM-6(B[m Copy Text   (B[0;7m^Q(B[m Where Was    (B[0;7mM-W(B[m Next[53;161H(B[0;7m^F(B[m Forward[177G(B[0;7m^▶(B[m Next Word[51d[2d[39;49m[36m#   However, in case of collaboration, if having platform-specific dependencies or dependencies[3d#   having no cross-platform support, pipenv may install dependencies that don't work, or not[4d#   install all needed dependencies.[5d#Pipfile.lock[7d# PEP 582; used by e.g. github.com/David-OConnor/pyflow[8d[39m(B[m__pypackages__/[10d[36m# Celery stuff[11d[39m(B[mcelerybeat-schedule[12dcelerybeat.pid[14d[36m# SageMath parsed files[15d[39m(B[m*.sage.py[17d[36m# Environments[18d[39m(B[m.env[19d.venv[20denv/[21dvenv/[22dENV/[23denv.bak/[24dvenv.bak/[26d[36m# Spyder project settings[27d[39m(B[m.spyderproject[28d.spyproject[30d[36m# Rope project settings[31d[39m(B[m.ropeproject[33d[36m# mkdocs documentation[34d[39m(B[m/site[36d[36m# mypy[37d[39m(B[m.mypy_cache/[38d.dmypy.json[39ddmypy.json[41d[36m# Pyre type checker[42d[39m(B[m.pyre/[45d[36m# Weights[46d[39m(B[mweights/[2d[?12l[?25h[?25l[3d[?12l[?25h[?25l[4d[?12l[?25h[?25l[5d[?12l[?25h[?25l[6d[?12l[?25h[?25l[7d[?12l[?25h[?25l[8d[?12l[?25h[?25l[9d[?12l[?25h[?25l[10d[?12l[?25h[?25l[11d[?12l[?25h[?25l[12d[?12l[?25h[?25l[13d[?12l[?25h[?25l[14d[?12l[?25h[?25l[15d[?12l[?25h[?25l[16d[?12l[?25h[?25l[17d[?12l[?25h[?25l[18d[?12l[?25h[?25l[19d[?12l[?25h[?25l[20d[?12l[?25h[?25l[21d[?12l[?25h[?25l[22d[?12l[?25h[?25l[23d[?12l[?25h[?25l[24d[?12l[?25h[?25l[25d[?12l[?25h[?25l[26d[?12l[?25h[?25l[27d[?12l[?25h[?25l[51d[K[28d[?12l[?25h[?25l[29d[?12l[?25h[?25l[30d[?12l[?25h[?25l[31d[?12l[?25h[?25l[32d[?12l[?25h[?25l[33d[?12l[?25h[?25l[34d[?12l[?25h[?25l[35d[?12l[?25h[?25l[36d[?12l[?25h[?25l[37d[?12l[?25h[?25l[38d[?12l[?25h[?25l[39d[?12l[?25h[?25l[40d[?12l[?25h[?25l[41d[?12l[?25h[?25l[42d[?12l[?25h[?25l[43d[?12l[?25h[?25l[44d[?12l[?25h[?25l[45d[?12l[?25h[?25l[46d[?12l[?25h[?25l[47d[?12l[?25h[?25l[48d[?12l[?25h[?25l[49d[?12l[?25h[?25l[50d[?12l[?25h[?25l7[2;51r8[51d
+[1;53r[50;1H[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[A[?12l[?25h[?25l[A[?12l[?25h[?25l[45d[?12l[?25h[?25l[A[?12l[?25h[?25l[45d[?12l[?25h[?25l[46d[?12l[?25h[?25l[1;194H(B[0;7mModified(B[m[46d*[?12l[?25h[?25l/[?12l[?25h[?25l_[?12l[?25h[?25l_[?12l[?25h[?25lp[?12l[?25h[?25ly[?12l[?25h[?25lc[?12l[?25h[?25la[?12l[?25h[?25lc[?12l[?25h[?25lhe[?12l[?25h[?25l_[?12l[?25h[?25l_[?12l[?25h[?25l[51;95H(B[0;7m[ Writing... ](B[m[1;194H(B[0;7m        (B[m[51;93H(B[0;7m[ Wrote 49 lines ](B[m[46;14H[?12l[?25h[?25l[1;194H(B[0;7mModified(B[m[46;14H/[?12l[?25h[?25l[51;93H  (B[0;7m[ Writing... ](B[m[K[1;194H(B[0;7m        (B[m[51;93H(B[0;7m[ Wrote 49 lines ](B[m[46;15H[?12l[?25h[?25l[51d[J[53d[?12l[?25h[53;1H[?1049l[23;0;0t[?1l>[?2004l(base) [01;32mpatel@ludwig[00m:[01;34m/data2/opticalflow/rnd/opticalflow/maskflownet/maskflownet_klens[00m$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   .gitignore[m
+	[31mmodified:   main.py[m
+	[31mmodified:   network/config/MaskFlownet.yaml[m
+	[31mmodified:   network/config/MaskFlownet_ft.yaml[m
+	[31mmodified:   network/config/chairsSDHom.yaml[m
+	[31mmodified:   network/config/sintel.yaml[m
+	[31mmodified:   network/config/things3d.yaml[m
+	[31mmodified:   reader/chairsSDHom.py[m
+	[31mmodified:   reader/sintel.py[m
+	[31mmodified:   reader/things3d.py[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31m.main.py.swp[m
+	[31m__pycache__/[m
+	[31mchairsSDHom_21_Dec_2020[m
+	[31mkout/[m
+	[31mlogs/032Dec22-1254.log[m
+	[31mlogs/0d8Dec22-2045.log[m
+	[31mlogs/2afDec22-1508.log[m
+	[31mlogs/4b7Dec21-2217.log[m
+	[31mlogs/4f7Dec21-2306.log[m
+	[31mlogs/57fDec22-1400.log[m
+	[31mlogs/6d0Dec22-2136.log[m
+	[31mlogs/80eDec22-2038.log[m
+	[31mlogs/80eDec22-2038.log.bak[m
+	[31mlogs/87eDec22-2124.log[m
+	[31mlogs/mylog_22Dec2020-maskflownet_ft_on_chairsSDHom.txt[m
+	[31mlogs_21Dec2020_chairsSDHom_finetune[m
+	[31mmain.py.save[m
+	[31mnetwork/config/__pycache__/[m
+	[31moutout.png[m
+	[31mpredKlens.sh[m
+	[31mreader/.chairsSDHom.py.swp[m
+	[31mreader/.sintel.py.swp[m
+	[31mreader/chairs/__pycache__/[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(base) [01;32mpatel@ludwig[00m:[01;34m/data2/opticalflow/rnd/opticalflow/maskflownet/maskflownet_klens[00m$ git statusnano .gitignore 
+[?2004h[?1049h[22;0;0t[1;53r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[51;95H(B[0;7m[ Reading... ](B[m[51;94H(B[0;7m[ Read 49 lines ](B[m[H(B[0;7m  GNU nano 4.8                                                                                    .gitignore                                                                                               [1;202H(B[m[52d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[97G(B[0;7mM-U(B[m Undo[52;113H(B[0;7mM-A(B[m Mark Text   (B[0;7mM-](B[m To Bracket  (B[0;7mM-Q(B[m Previous    (B[0;7m^B(B[m Back[52;177H(B[0;7m^◀(B[m Prev Word[53d(B[0;7m^X(B[m Exit[53;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line   (B[0;7mM-E(B[m Redo[53;113H(B[0;7mM-6(B[m Copy Text   (B[0;7m^Q(B[m Where Was    (B[0;7mM-W(B[m Next[53;161H(B[0;7m^F(B[m Forward[177G(B[0;7m^▶(B[m Next Word[51d[2d[39;49m[36m#   However, in case of collaboration, if having platform-specific dependencies or dependencies[3d#   having no cross-platform support, pipenv may install dependencies that don't work, or not[4d#   install all needed dependencies.[5d#Pipfile.lock[7d# PEP 582; used by e.g. github.com/David-OConnor/pyflow[8d[39m(B[m__pypackages__/[10d[36m# Celery stuff[11d[39m(B[mcelerybeat-schedule[12dcelerybeat.pid[14d[36m# SageMath parsed files[15d[39m(B[m*.sage.py[17d[36m# Environments[18d[39m(B[m.env[19d.venv[20denv/[21dvenv/[22dENV/[23denv.bak/[24dvenv.bak/[26d[36m# Spyder project settings[27d[39m(B[m.spyderproject[28d.spyproject[30d[36m# Rope project settings[31d[39m(B[m.ropeproject[33d[36m# mkdocs documentation[34d[39m(B[m/site[36d[36m# mypy[37d[39m(B[m.mypy_cache/[38d.dmypy.json[39ddmypy.json[41d[36m# Pyre type checker[42d[39m(B[m.pyre/[45d[36m# Weights[46d[39m(B[mweights/[47d*/__pycache__/[2d[?12l[?25h[?25l[3d[?12l[?25h[?25l[4d[?12l[?25h[?25l[5d[?12l[?25h[?25l[6d[?12l[?25h[?25l[7d[?12l[?25h[?25l[8d[?12l[?25h[?25l[9d[?12l[?25h[?25l[10d[?12l[?25h[?25l[12d[?12l[?25h[?25l[13d[?12l[?25h[?25l[14d[?12l[?25h[?25l[15d[?12l[?25h[?25l[16d[?12l[?25h[?25l[17d[?12l[?25h[?25l[18d[?12l[?25h[?25l[19d[?12l[?25h[?25l[20d[?12l[?25h[?25l[21d[?12l[?25h[?25l[23d[?12l[?25h[?25l[24d[?12l[?25h[?25l[25d[?12l[?25h[?25l[26d[?12l[?25h[?25l[27d[?12l[?25h[?25l[51d[K[28d[?12l[?25h[?25l[29d[?12l[?25h[?25l[31d[?12l[?25h[?25l[32d[?12l[?25h[?25l[33d[?12l[?25h[?25l[34d[?12l[?25h[?25l[35d[?12l[?25h[?25l[36d[?12l[?25h[?25l[37d[?12l[?25h[?25l[38d[?12l[?25h[?25l[39d[?12l[?25h[?25l[40d[?12l[?25h[?25l[41d[?12l[?25h[?25l[42d[?12l[?25h[?25l[43d[?12l[?25h[?25l[44d[?12l[?25h[?25l[45d[?12l[?25h[?25l[46d[?12l[?25h[?25l[47d[?12l[?25h[?25l[48d[?12l[?25h[?25l[49d[?12l[?25h[?25l[50d[?12l[?25h[?25l7[2;51r8[51d
+[1;53r[50;1H[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[A[?12l[?25h[?25l[A[?12l[?25h[?25l[A[?12l[?25h[?25l[A[?12l[?25h[?25l[1;194H(B[0;7mModified(B[m[46d[K[?12l[?25h[?25l*/__pycache__/[47d[?12l[?25h[?25l*/__pycache__/[48d[?12l[?25h[?25l[A[?12l[?25h[?25l*[?12l[?25h[?25l//__pycache__/*/[?12l[?25h[?25l*/__pycache__/*/*[?12l[?25h[?25l[51;95H(B[0;7m[ Writing... ](B[m[1;194H(B[0;7m        (B[m[51;93H(B[0;7m[ Wrote 50 lines ](B[m[47;4H[?12l[?25h[?25l[51d[J[53d[?12l[?25h[53;1H[?1049l[23;0;0t[?1l>[?2004l(base) [01;32mpatel@ludwig[00m:[01;34m/data2/opticalflow/rnd/opticalflow/maskflownet/maskflownet_klens[00m$ nano .gitignore [6Pgit status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   .gitignore[m
+	[31mmodified:   main.py[m
+	[31mmodified:   network/config/MaskFlownet.yaml[m
+	[31mmodified:   network/config/MaskFlownet_ft.yaml[m
+	[31mmodified:   network/config/chairsSDHom.yaml[m
+	[31mmodified:   network/config/sintel.yaml[m
+	[31mmodified:   network/config/things3d.yaml[m
+	[31mmodified:   reader/chairsSDHom.py[m
+	[31mmodified:   reader/sintel.py[m
+	[31mmodified:   reader/things3d.py[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31m.main.py.swp[m
+	[31m__pycache__/[m
+	[31mchairsSDHom_21_Dec_2020[m
+	[31mkout/[m
+	[31mlogs/032Dec22-1254.log[m
+	[31mlogs/0d8Dec22-2045.log[m
+	[31mlogs/2afDec22-1508.log[m
+	[31mlogs/4b7Dec21-2217.log[m
+	[31mlogs/4f7Dec21-2306.log[m
+	[31mlogs/57fDec22-1400.log[m
+	[31mlogs/6d0Dec22-2136.log[m
+	[31mlogs/80eDec22-2038.log[m
+	[31mlogs/80eDec22-2038.log.bak[m
+	[31mlogs/87eDec22-2124.log[m
+	[31mlogs/mylog_22Dec2020-maskflownet_ft_on_chairsSDHom.txt[m
+	[31mlogs_21Dec2020_chairsSDHom_finetune[m
+	[31mmain.py.save[m
+	[31moutout.png[m
+	[31mpredKlens.sh[m
+	[31mreader/.chairsSDHom.py.swp[m
+	[31mreader/.sintel.py.swp[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(base) [01;32mpatel@ludwig[00m:[01;34m/data2/opticalflow/rnd/opticalflow/maskflownet/maskflownet_klens[00m$ git statusnano .gitignore 
+[?2004h[?1049h[22;0;0t[1;53r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[51;95H(B[0;7m[ Reading... ](B[m[51;94H(B[0;7m[ Read 50 lines ](B[m[H(B[0;7m  GNU nano 4.8                                                                                    .gitignore                                                                                               [1;202H(B[m[52d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[97G(B[0;7mM-U(B[m Undo[52;113H(B[0;7mM-A(B[m Mark Text   (B[0;7mM-](B[m To Bracket  (B[0;7mM-Q(B[m Previous    (B[0;7m^B(B[m Back[52;177H(B[0;7m^◀(B[m Prev Word[53d(B[0;7m^X(B[m Exit[53;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line   (B[0;7mM-E(B[m Redo[53;113H(B[0;7mM-6(B[m Copy Text   (B[0;7m^Q(B[m Where Was    (B[0;7mM-W(B[m Next[53;161H(B[0;7m^F(B[m Forward[177G(B[0;7m^▶(B[m Next Word[51d[2d[39;49m[36m#   However, in case of collaboration, if having platform-specific dependencies or dependencies[3d#   having no cross-platform support, pipenv may install dependencies that don't work, or not[4d#   install all needed dependencies.[5d#Pipfile.lock[7d# PEP 582; used by e.g. github.com/David-OConnor/pyflow[8d[39m(B[m__pypackages__/[10d[36m# Celery stuff[11d[39m(B[mcelerybeat-schedule[12dcelerybeat.pid[14d[36m# SageMath parsed files[15d[39m(B[m*.sage.py[17d[36m# Environments[18d[39m(B[m.env[19d.venv[20denv/[21dvenv/[22dENV/[23denv.bak/[24dvenv.bak/[26d[36m# Spyder project settings[27d[39m(B[m.spyderproject[28d.spyproject[30d[36m# Rope project settings[31d[39m(B[m.ropeproject[33d[36m# mkdocs documentation[34d[39m(B[m/site[36d[36m# mypy[37d[39m(B[m.mypy_cache/[38d.dmypy.json[39ddmypy.json[41d[36m# Pyre type checker[42d[39m(B[m.pyre/[45d[36m# Weights[46d[39m(B[mweights/[47d*/__pycache__/[48d*/*/__pycache__/[2d[?12l[?25h[?25l[K[3d[K[4d[K[5d[K[7d[K[8d[K[10d[K[11d[K[12d[K[14d[K[15d[K[17d[K[18d[K[19d[K[20d[K[21d[K[22d[K[23d[K[24d[K[26d[K[27d[K[28d[K[30d[K[31d[K[33d[K[34d[K[36d[K[37d[K[38d[K[39d[K[41d[K[42d[K[45d[K[46d[K[47d[K[48d[K[2d[?12l[?25h[?25l[5d[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[1;194H(B[0;7mModified(B[m[4d[?12l[?25h[?25l[A[?12l[?25h[?25l[A[?12l[?25h[?25l*/*/__pycache__/[?12l[?25h[?25l[3d[?12l[?25h[?25l.[?12l[?25h[?25l/[?12l[?25h[?25lk[?12l[?25h[?25lo[?12l[?25h[?25lu[?12l[?25h[?25lt[?12l[?25h[?25l/[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l/[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[51;94H (B[0;7m[ Writing... ](B[m[K[1;194H(B[0;7m        (B[m[51;93H(B[0;7m[ Wrote 48 lines ](B[m[3d[?12l[?25h[?25l[51d[J[53d[?12l[?25h[53;1H[?1049l[23;0;0t[?1l>[?2004l(base) [01;32mpatel@ludwig[00m:[01;34m/data2/opticalflow/rnd/opticalflow/maskflownet/maskflownet_klens[00m$ nano .gitignore [6Pgit status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   .gitignore[m
+	[31mmodified:   main.py[m
+	[31mmodified:   network/config/MaskFlownet.yaml[m
+	[31mmodified:   network/config/MaskFlownet_ft.yaml[m
+	[31mmodified:   network/config/chairsSDHom.yaml[m
+	[31mmodified:   network/config/sintel.yaml[m
+	[31mmodified:   network/config/things3d.yaml[m
+	[31mmodified:   reader/chairsSDHom.py[m
+	[31mmodified:   reader/sintel.py[m
+	[31mmodified:   reader/things3d.py[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31m.main.py.swp[m
+	[31m__pycache__/[m
+	[31mchairsSDHom_21_Dec_2020[m
+	[31mlogs/032Dec22-1254.log[m
+	[31mlogs/0d8Dec22-2045.log[m
+	[31mlogs/2afDec22-1508.log[m
+	[31mlogs/4b7Dec21-2217.log[m
+	[31mlogs/4f7Dec21-2306.log[m
+	[31mlogs/57fDec22-1400.log[m
+	[31mlogs/6d0Dec22-2136.log[m
+	[31mlogs/80eDec22-2038.log[m
+	[31mlogs/80eDec22-2038.log.bak[m
+	[31mlogs/87eDec22-2124.log[m
+	[31mlogs/mylog_22Dec2020-maskflownet_ft_on_chairsSDHom.txt[m
+	[31mlogs_21Dec2020_chairsSDHom_finetune[m
+	[31mmain.py.save[m
+	[31moutout.png[m
+	[31mpredKlens.sh[m
+	[31mreader/.chairsSDHom.py.swp[m
+	[31mreader/.sintel.py.swp[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(base) [01;32mpatel@ludwig[00m:[01;34m/data2/opticalflow/rnd/opticalflow/maskflownet/maskflownet_klens[00m$ git add .
+(base) [01;32mpatel@ludwig[00m:[01;34m/data2/opticalflow/rnd/opticalflow/maskflownet/maskflownet_klens[00m$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mmodified:   .gitignore[m
+	[32mnew file:   .main.py.swp[m
+	[32mnew file:   __pycache__/augmentation.cpython-38.pyc[m
+	[32mnew file:   __pycache__/flow_vis.cpython-38.pyc[m
+	[32mnew file:   __pycache__/logger.cpython-38.pyc[m
+	[32mnew file:   __pycache__/path.cpython-38.pyc[m
+	[32mnew file:   chairsSDHom_21_Dec_2020[m
+	[32mnew file:   logs/032Dec22-1254.log[m
+	[32mnew file:   logs/0d8Dec22-2045.log[m
+	[32mnew file:   logs/2afDec22-1508.log[m
+	[32mnew file:   logs/4b7Dec21-2217.log[m
+	[32mnew file:   logs/4f7Dec21-2306.log[m
+	[32mnew file:   logs/57fDec22-1400.log[m
+	[32mnew file:   logs/6d0Dec22-2136.log[m
+	[32mnew file:   logs/80eDec22-2038.log[m
+	[32mnew file:   logs/80eDec22-2038.log.bak[m
+	[32mnew file:   logs/87eDec22-2124.log[m
+	[32mnew file:   logs/mylog_22Dec2020-maskflownet_ft_on_chairsSDHom.txt[m
+	[32mnew file:   logs_21Dec2020_chairsSDHom_finetune[m
+	[32mmodified:   main.py[m
+	[32mnew file:   main.py.save[m
+	[32mmodified:   network/config/MaskFlownet.yaml[m
+	[32mmodified:   network/config/MaskFlownet_ft.yaml[m
+	[32mmodified:   network/config/chairsSDHom.yaml[m
+	[32mmodified:   network/config/sintel.yaml[m
+	[32mmodified:   network/config/things3d.yaml[m
+	[32mnew file:   outout.png[m
+	[32mnew file:   predKlens.sh[m
+	[32mnew file:   reader/.chairsSDHom.py.swp[m
+	[32mnew file:   reader/.sintel.py.swp[m
+	[32mmodified:   reader/chairsSDHom.py[m
+	[32mmodified:   reader/sintel.py[m
+	[32mmodified:   reader/things3d.py[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   logs_21Dec2020_chairsSDHom_finetune[m
+
+(base) [01;32mpatel@ludwig[00m:[01;34m/data2/opticalflow/rnd/opticalflow/maskflownet/maskflownet_klens[00m$ git reset
+Unstaged changes after reset:
+M	.gitignore
+M	main.py
+M	network/config/MaskFlownet.yaml
+M	network/config/MaskFlownet_ft.yaml
+M	network/config/chairsSDHom.yaml
+M	network/config/sintel.yaml
+M	network/config/things3d.yaml
+M	reader/chairsSDHom.py
+M	reader/sintel.py
+M	reader/things3d.py
+(base) [01;32mpatel@ludwig[00m:[01;34m/data2/opticalflow/rnd/opticalflow/maskflownet/maskflownet_klens[00m$ nano .gitignore 
+[?2004h[?1049h[22;0;0t[1;53r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[51;95H(B[0;7m[ Reading... ](B[m[51;94H(B[0;7m[ Read 48 lines ](B[m[H(B[0;7m  GNU nano 4.8                                                                                    .gitignore                                                                                               [1;202H(B[m[52d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[97G(B[0;7mM-U(B[m Undo[52;113H(B[0;7mM-A(B[m Mark Text   (B[0;7mM-](B[m To Bracket  (B[0;7mM-Q(B[m Previous    (B[0;7m^B(B[m Back[52;177H(B[0;7m^◀(B[m Prev Word[53d(B[0;7m^X(B[m Exit[53;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line   (B[0;7mM-E(B[m Redo[53;113H(B[0;7mM-6(B[m Copy Text   (B[0;7m^Q(B[m Where Was    (B[0;7mM-W(B[m Next[53;161H(B[0;7m^F(B[m Forward[177G(B[0;7m^▶(B[m Next Word[51d[2d[39;49m[36m#   However, in case of collaboration, if having platform-specific dependencies or dependencies[3d#   having no cross-platform support, pipenv may install dependencies that don't work, or not[4d#   install all needed dependencies.[5d#Pipfile.lock[7d# PEP 582; used by e.g. github.com/David-OConnor/pyflow[8d[39m(B[m__pypackages__/[10d[36m# Celery stuff[11d[39m(B[mcelerybeat-schedule[12dcelerybeat.pid[14d[36m# SageMath parsed files[15d[39m(B[m*.sage.py[17d[36m# Environments[18d[39m(B[m.env[19d.venv[20denv/[21dvenv/[22dENV/[23denv.bak/[24dvenv.bak/[26d[36m# Spyder project settings[27d[39m(B[m.spyderproject[28d.spyproject[30d[36m# Rope project settings[31d[39m(B[m.ropeproject[33d[36m# mkdocs documentation[34d[39m(B[m/site[36d[36m# mypy[37d[39m(B[m.mypy_cache/[38d.dmypy.json[39ddmypy.json[41d[36m# Pyre type checker[42d[39m(B[m.pyre/[45d[36m# Weights[46d[39m(B[mweights/[47d*/__pycache__/[48d*/*/__pycache__/[49dkout/[2d[?12l[?25h[?25lkout/[K[3d[K[4d[K[5d[K[7d[K[8d[K[10d[K[11d[K[12d[K[14d[K[15d[K[17d[K[18d[K[19d[K[20d[K[21d[K[22d[K[23d[K[24d[K[26d[K[27d[K[28d[K[30d[K[31d[K[33d[K[34d[K[36d[K[37d[K[38d[K[39d[K[41d[K[42d[K[45d[K[46d[K[47d[K[48d[K[49d[K[2d[?12l[?25h[?25l[3d[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[1;194H(B[0;7mModified(B[m[3d*[?12l[?25h[?25l.[?12l[?25h[?25ls[?12l[?25h[?25la[?12l[?25h[?25lv[?12l[?25h[?25le[?12l[?25h[?25l[51;94H (B[0;7m[ Writing... ](B[m[K[1;194H(B[0;7m        (B[m[51;93H(B[0;7m[ Wrote 49 lines ](B[m[3;7H[?12l[?25h[?25l[51d[J[53d[?12l[?25h[53;1H[?1049l[23;0;0t[?1l>[?2004l(base) [01;32mpatel@ludwig[00m:[01;34m/data2/opticalflow/rnd/opticalflow/maskflownet/maskflownet_klens[00m$ nano .gitignore ls /data2/opticalflow/datasets/ChairsSDHom_extended/val/ | head -10gpu-info[Kls /data2/opticalflow/datasets/ChairsSDHom_extended/val/ | head -10nano .gitignore [K[Kgit status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   .gitignore[m
+	[31mmodified:   main.py[m
+	[31mmodified:   network/config/MaskFlownet.yaml[m
+	[31mmodified:   network/config/MaskFlownet_ft.yaml[m
+	[31mmodified:   network/config/chairsSDHom.yaml[m
+	[31mmodified:   network/config/sintel.yaml[m
+	[31mmodified:   network/config/things3d.yaml[m
+	[31mmodified:   reader/chairsSDHom.py[m
+	[31mmodified:   reader/sintel.py[m
+	[31mmodified:   reader/things3d.py[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31m.main.py.swp[m
+	[31m__pycache__/[m
+	[31mchairsSDHom_21_Dec_2020[m
+	[31mlogs/032Dec22-1254.log[m
+	[31mlogs/0d8Dec22-2045.log[m
+	[31mlogs/2afDec22-1508.log[m
+	[31mlogs/4b7Dec21-2217.log[m
+	[31mlogs/4f7Dec21-2306.log[m
+	[31mlogs/57fDec22-1400.log[m
+	[31mlogs/6d0Dec22-2136.log[m
+	[31mlogs/80eDec22-2038.log[m
+	[31mlogs/80eDec22-2038.log.bak[m
+	[31mlogs/87eDec22-2124.log[m
+	[31mlogs/mylog_22Dec2020-maskflownet_ft_on_chairsSDHom.txt[m
+	[31mlogs_21Dec2020_chairsSDHom_finetune[m
+	[31moutout.png[m
+	[31mpredKlens.sh[m
+	[31mreader/.chairsSDHom.py.swp[m
+	[31mreader/.sintel.py.swp[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(base) [01;32mpatel@ludwig[00m:[01;34m/data2/opticalflow/rnd/opticalflow/maskflownet/maskflownet_klens[00m$ git statusnano .gitignore 
+[?2004h[?1049h[22;0;0t[1;53r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[51;95H(B[0;7m[ Reading... ](B[m[51;94H(B[0;7m[ Read 49 lines ](B[m[H(B[0;7m  GNU nano 4.8                                                                                    .gitignore                                                                                               [1;202H(B[m[52d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[97G(B[0;7mM-U(B[m Undo[52;113H(B[0;7mM-A(B[m Mark Text   (B[0;7mM-](B[m To Bracket  (B[0;7mM-Q(B[m Previous    (B[0;7m^B(B[m Back[52;177H(B[0;7m^◀(B[m Prev Word[53d(B[0;7m^X(B[m Exit[53;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line   (B[0;7mM-E(B[m Redo[53;113H(B[0;7mM-6(B[m Copy Text   (B[0;7m^Q(B[m Where Was    (B[0;7mM-W(B[m Next[53;161H(B[0;7m^F(B[m Forward[177G(B[0;7m^▶(B[m Next Word[51d[2d[39;49m[36m#   However, in case of collaboration, if having platform-specific dependencies or dependencies[3d#   having no cross-platform support, pipenv may install dependencies that don't work, or not[4d#   install all needed dependencies.[5d#Pipfile.lock[7d# PEP 582; used by e.g. github.com/David-OConnor/pyflow[8d[39m(B[m__pypackages__/[10d[36m# Celery stuff[11d[39m(B[mcelerybeat-schedule[12dcelerybeat.pid[14d[36m# SageMath parsed files[15d[39m(B[m*.sage.py[17d[36m# Environments[18d[39m(B[m.env[19d.venv[20denv/[21dvenv/[22dENV/[23denv.bak/[24dvenv.bak/[26d[36m# Spyder project settings[27d[39m(B[m.spyderproject[28d.spyproject[30d[36m# Rope project settings[31d[39m(B[m.ropeproject[33d[36m# mkdocs documentation[34d[39m(B[m/site[36d[36m# mypy[37d[39m(B[m.mypy_cache/[38d.dmypy.json[39ddmypy.json[41d[36m# Pyre type checker[42d[39m(B[m.pyre/[45d[36m# Weights[46d[39m(B[mweights/[47d*/__pycache__/[48d*/*/__pycache__/[49dkout/[50d*.save[2d[?12l[?25h[?25lkout/[K[3d*.save[K[4d[K[5d[K[7d[K[8d[K[10d[K[11d[K[12d[K[14d[K[15d[K[17d[K[18d[K[19d[K[20d[K[21d[K[22d[K[23d[K[24d[K[26d[K[27d[K[28d[K[30d[K[31d[K[33d[K[34d[K[36d[K[37d[K[38d[K[39d[K[41d[K[42d[K[45d[K[46d[K[47d[K[48d[K[49d[K[50d[K[2d[?12l[?25h[?25l[4d[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[1;194H(B[0;7mModified(B[m[4d*.sw[?12l[?25h[?25lp[?12l[?25h[?25l[51;94H (B[0;7m[ Writing... ](B[m[K[1;194H(B[0;7m        (B[m[51;93H(B[0;7m[ Wrote 50 lines ](B[m[4;6H[?12l[?25h[?25l[51d[J[53d[?12l[?25h[53;1H[?1049l[23;0;0t[?1l>[?2004l(base) [01;32mpatel@ludwig[00m:[01;34m/data2/opticalflow/rnd/opticalflow/maskflownet/maskflownet_klens[00m$ ca[K[Kgit status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   .gitignore[m
+	[31mmodified:   main.py[m
+	[31mmodified:   network/config/MaskFlownet.yaml[m
+	[31mmodified:   network/config/MaskFlownet_ft.yaml[m
+	[31mmodified:   network/config/chairsSDHom.yaml[m
+	[31mmodified:   network/config/sintel.yaml[m
+	[31mmodified:   network/config/things3d.yaml[m
+	[31mmodified:   reader/chairsSDHom.py[m
+	[31mmodified:   reader/sintel.py[m
+	[31mmodified:   reader/things3d.py[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31m__pycache__/[m
+	[31mchairsSDHom_21_Dec_2020[m
+	[31mlogs/032Dec22-1254.log[m
+	[31mlogs/0d8Dec22-2045.log[m
+	[31mlogs/2afDec22-1508.log[m
+	[31mlogs/4b7Dec21-2217.log[m
+	[31mlogs/4f7Dec21-2306.log[m
+	[31mlogs/57fDec22-1400.log[m
+	[31mlogs/6d0Dec22-2136.log[m
+	[31mlogs/80eDec22-2038.log[m
+	[31mlogs/80eDec22-2038.log.bak[m
+	[31mlogs/87eDec22-2124.log[m
+	[31mlogs/mylog_22Dec2020-maskflownet_ft_on_chairsSDHom.txt[m
+	[31mlogs_21Dec2020_chairsSDHom_finetune[m
+	[31moutout.png[m
+	[31mpredKlens.sh[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(base) [01;32mpatel@ludwig[00m:[01;34m/data2/opticalflow/rnd/opticalflow/maskflownet/maskflownet_klens[00m$ 

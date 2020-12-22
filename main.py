@@ -8,7 +8,7 @@ import yaml
 import hashlib
 import socket
 import subprocess as sp
-
+import skimage.io
 def get_gpu_memory():
   _output_to_list = lambda x: x.decode('ascii').split('\n')[:-1]
 
@@ -28,8 +28,8 @@ repoRoot = r'.'
 os.environ["MXNET_CUDNN_AUTOTUNE_DEFAULT"] = "0"
 os.environ['PATH'] = r'/usr/local/cuda/bin' + ';' + os.environ['PATH']
 # Flying Chairs Dataset
-chairs_path = r'path\to\your\FlyingChairs_release\data'
-chairs_split_file = r'path\to\your\FlyingChairs_release\FlyingChairs_train_val.txt'
+chairs_path = r'/data2/opticalflow/datasets/FlyingChairs2/'
+# chairs_split_file = r'path\to\your\FlyingChairs_release\FlyingChairs_train_val.txt'
 
 import numpy as np
 import mxnet as mx
@@ -99,7 +99,7 @@ if args.checkpoint is not None:
         else:
                 prefix = args.checkpoint
                 steps = None
-        log_file, run_id = path.find_log(prefix)	
+        log_file, run_id = path.find_log(prefix)
         if steps is None:
                 checkpoint, steps = path.find_checkpoints(run_id)[-1]
         else:
@@ -231,7 +231,7 @@ if dataset_cfg.dataset.value == 'kitti':
         validation_datasets['kitti.15'] = (dataset['image_0'], dataset['image_1'], dataset['flow'], dataset['occ'])
 
 elif dataset_cfg.dataset.value == 'sintel':
-        batch_size = 4
+        batch_size = 3
         print('loading sintel dataset ...')
         sys.stdout.flush()
 
@@ -281,7 +281,7 @@ elif dataset_cfg.dataset.value == 'sintel':
                 validation_datasets['sintel.' + k] = (img1, img2, flow, mask)
 
 elif dataset_cfg.dataset.value == 'things3d':
-        batch_size = 4
+        batch_size = 3
         print('loading things3d dataset ...')
         sub_type = dataset_cfg.sub_type.get('clean')
         print('sub_type: ' + sub_type)
@@ -301,18 +301,21 @@ elif dataset_cfg.dataset.value == 'things3d':
         print(len(things3d_dataset['flow'][:samples:args.shard]))
         print(things3d_dataset['flow'][0])
         from pympler.asizeof import asizeof
-        trainImg1 = [cv2.imread(file).astype('uint8') for file in things3d_dataset['image_0'][:samples:args.shard]]
+        trainImg1 = [file for file in things3d_dataset['image_0'][:samples:args.shard]]
+        #trainImg1 = [cv2.imread(file).astype('uint8') for file in things3d_dataset['image_0'][:samples:args.shard]]
         print(asizeof(trainImg1[0]))
         print(asizeof(trainImg1))
-        trainImg2 = [cv2.imread(file).astype('uint8') for file in things3d_dataset['image_1'][:samples:args.shard]]
+        trainImg2 = [file for file in things3d_dataset['image_1'][:samples:args.shard]]
         print(asizeof(trainImg2[0]))
         print(asizeof(trainImg2))
-        trainFlow = [things3d.load(file).astype('float16') for file in things3d_dataset['flow'][:samples:args.shard]]
+        trainFlow = [file for file in things3d_dataset['flow'][:samples:args.shard]]
         print(asizeof(trainFlow[0]))
         print(asizeof(trainFlow))
         trainSize = len(trainFlow)
         training_datasets = [(trainImg1, trainImg2, trainFlow)] * batch_size
         print(asizeof(training_datasets))
+        validationSize = 0
+        '''
 
         # validation- chairs
         _, validationSet = trainval.read(chairs_split_file)
@@ -332,6 +335,7 @@ elif dataset_cfg.dataset.value == 'things3d':
                         img1, img2, flow, mask = [[sintel.load(p) for p in data] for data in zip(*dataset)]
                         validationSize += len(flow)
                         validation_datasets['sintel.' + k] = (img1, img2, flow, mask)
+        '''
         # validation- kitti
         for kitti_version in ('2012', '2015'):
                 dataset = kitti.read_dataset(editions = kitti_version, crop = (370, 1224))
@@ -373,29 +377,30 @@ elif dataset_cfg.dataset.value == 'chairs':
                         validationSize += len(flow)
                         validation_datasets['sintel.' + k] = (img1, img2, flow, mask)
 elif dataset_cfg.dataset.value == "chairsSDHom":
-        batch_size=1
+        batch_size=3
         orig_shape= [384,512]
         # training
         chairsSDHom_dataset = chairsSDHom.list_data()
-        print(len(chairsSDHom_dataset['flow']))
+        # print(len(chairsSDHom_dataset['flow']))
         # print(len(things3d_dataset['flow'][:samples:args.shard]))
         print(chairsSDHom_dataset['flow'][0])
         from pympler.asizeof import asizeof
         #trainImg1 = [cv2.imread(file).astype('uint8') for file in chairsSDHom_dataset['image_0'][:int(len(chairsSDHom_dataset["image_0"])*2/3)]]
         trainImg1 = [file for file in chairsSDHom_dataset['image_0']]
-        print(asizeof(trainImg1[0]))
-        print(asizeof(trainImg1))
+        #print(asizeof(trainImg1[0]))
+        #print(asizeof(trainImg1))
         #trainImg2 = [cv2.imread(file).astype('uint8') for file in chairsSDHom_dataset['image_1'][:int(len(chairsSDHom_dataset["image_0"])*2/3)]]
         trainImg2 = [file for file in chairsSDHom_dataset['image_1']]
-        print(asizeof(trainImg2[0]))
-        print(asizeof(trainImg2))
+        #print(asizeof(trainImg2[0]))
+        #print(asizeof(trainImg2))
         #trainFlow = [chairsSDHom.load(file).astype('float16') for file in chairsSDHom_dataset['flow'][:int(len(chairsSDHom_dataset["image_0"])*2/3)]]
         trainFlow = [file for file in chairsSDHom_dataset['flow']]
-        print(asizeof(trainFlow[0]))
-        print(asizeof(trainFlow))
+        trainMask = [file for file in chairsSDHom_dataset['mask']]
+        #print(asizeof(trainFlow[0]))
+        #print(asizeof(trainFlow))
         trainSize = len(trainFlow)
-        training_datasets = [(trainImg1, trainImg2, trainFlow)] * batch_size
-        print(asizeof(training_datasets))
+        training_datasets = [(trainImg1, trainImg2, trainFlow,trainMask)] * batch_size
+        #print(asizeof(training_datasets))
 
         # validaion- sintel
         sintel_dataset = sintel.list_data()
@@ -412,7 +417,7 @@ else:
 print('Using {}s'.format(default_timer() - t0))
 sys.stdout.flush()
 
-# 
+# print("1. ",batch_size,len(ctx))
 assert batch_size % len(ctx) == 0
 batch_size_card = batch_size // len(ctx)
 
@@ -509,21 +514,38 @@ from threading import Thread
 from queue import Queue
 
 def iterate_data(iq, dataset):
+    if dataset_cfg.dataset.value == 'chairsSDHom' or dataset_cfg.dataset.value == "things3d":
         gen = index_generator(len(dataset[0]))
         #print("dataset",dataset)
         while True:
-                i = next(gen)
-                data = [item[i] for item in dataset]
-                #print(data)
-                data = [cv2.imread(data[0]).astype('uint8'),cv2.imread(data[1]).astype('uint8'),chairsSDHom.load(data[2]).astype("float16")]
-                space_x, space_y = data[0].shape[0] - orig_shape[0], data[0].shape[1] - orig_shape[1]
-                crop_x, crop_y = space_x and np.random.randint(space_x), space_y and np.random.randint(space_y)
-                data = [np.transpose(arr[crop_x: crop_x + orig_shape[0], crop_y: crop_y + orig_shape[1]], (2, 0, 1)) for arr in data]
-                # vertical flip
-                if np.random.randint(2):
-                        data = [arr[:, :, ::-1] for arr in data]
-                        data[2] = np.stack([-data[2][0, :, :], data[2][1, :, :]], axis = 0)
-                iq.put(data)
+            i = next(gen)
+            data = [item[i] for item in dataset]
+            #print(data)
+            if dataset_cfg.dataset.value == "chairsSDHom":
+                data = [skimage.io.imread(data[0]),skimage.io.imread(data[1]),chairsSDHom.load(data[2]),skimage.io.imread(data[3])]
+            elif dataset_cfg.dataset.value == "things3d":
+                data = [cv2.imread(data[0]).astype('uint8'),skimage.io.imread(data[1]).astype('uint8'),things3d.load(data[2]).astype('float16')]
+            space_x, space_y = data[0].shape[0] - orig_shape[0], data[0].shape[1] - orig_shape[1]
+            crop_x, crop_y = space_x and np.random.randint(space_x), space_y and np.random.randint(space_y)
+            data = [np.transpose(arr[crop_x: crop_x + orig_shape[0], crop_y: crop_y + orig_shape[1]], (2, 0, 1)) for arr in data]
+            # vertical flip
+            if np.random.randint(2):
+                data = [arr[:, :, ::-1] for arr in data]
+                data[2] = np.stack([-data[2][0, :, :], data[2][1, :, :]], axis = 0)
+            iq.put(data)
+    else:
+        gen = index_generator(len(dataset[0]))
+        while True:
+            i = next(gen)
+            data = [item[i] for item in dataset]
+            space_x, space_y = data[0].shape[0] - orig_shape[0], data[0].shape[1] - orig_shape[1]
+            crop_x, crop_y = space_x and np.random.randint(space_x), space_y and np.random.randint(space_y)
+            data = [np.transpose(arr[crop_x: crop_x + orig_shape[0], crop_y: crop_y + orig_shape[1]], (2, 0, 1)) for arr in data]
+            # vertical flip
+            if np.random.randint(2):
+                data = [arr[:, :, ::-1] for arr in data]
+                data[2] = np.stack([-data[2][0, :, :], data[2][1, :, :]], axis = 0)
+            iq.put(data)
 
 def batch_samples(iqs, oq, batch_size):
         #print(iqs,oq,batch_size)
@@ -579,8 +601,8 @@ while True:
                 now = time.time()
                 img1, img2, flow = [batch[i] for i in range(3)]
                 train_log = pipe.train_batch(img1, img2, flow, geo_aug, color_aug)
-                #print(batch_queue,data_queues,remove_queue)
-                print("time taken=",time.time()-now," | steps=",steps,"| cpu=",psutil.cpu_percent(),"| ram=",psutil.virtual_memory().available * 100 / psutil.virtual_memory().total,"| gpu=",get_gpu_memory())
+                if steps%100==0 or steps ==1:
+                    print("time taken=",time.time()-now," | steps=",steps,"| cpu=",psutil.cpu_percent(),"| ram=",psutil.virtual_memory().available * 100 / psutil.virtual_memory().total,"| gpu=",get_gpu_memory())
         # update log
         if steps <= 20 or steps % 50 == 0:
                 train_avg.update(train_log)
@@ -595,6 +617,7 @@ while True:
 
                 # save parameters
                 if steps % checkpoint_steps == 0:
+                        os.system("python predict_new_data.py ./outout.png MaskFlownet.yaml --image_1 /data2/opticalflow/KLENS/images/KLE_0309_exp_sub4.jpg --image_2 /data2/opticalflow/KLENS/images/KLE_0309_exp_sub5.jpg -c Dec22")
                         prefix = os.path.join(repoRoot, 'weights', '{}_{}'.format(run_id, steps))
                         pipe.save(prefix)
                         checkpoints.append(prefix)

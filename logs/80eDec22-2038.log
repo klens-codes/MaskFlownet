@@ -1,0 +1,53 @@
+[2020/12/22 20:38:27] start=0, train=78563, val=450, host=ludwig, batch=33
+[2020/12/22 20:38:27] batch=16, config='MaskFlownet_ft.yaml', dataset_cfg='things3d.yaml', shard=1, gpu_device='1,2,3', checkpoint='5adNov03', clear_steps=True, network='MaskFlownet', debug=False, valid=False, predict=False, resize=''
+[2020/12/22 20:38:54] start=0, train=78563, val=450, host=ludwig, batch=3
+[2020/12/22 20:38:54] batch=16, config='MaskFlownet_ft.yaml', dataset_cfg='things3d.yaml', shard=1, gpu_device='1,2,3', checkpoint='5adNov03', clear_steps=True, network='MaskFlownet', debug=False, valid=False, predict=False, resize=''
+[2020/12/22 20:39:04] steps=1, epe=248.5382209054885, total_time=0.00
+[2020/12/22 20:39:22] steps=1, sintel.clean=1.3972785472869873, sintel.final=1.7319155931472778
+[2020/12/22 20:39:22] steps=2, epe=123.20895979173345, total_time=27.91
+[2020/12/22 20:39:22] steps=3, epe=81.06684136827506, total_time=13.71
+[2020/12/22 20:39:22] steps=4, epe=60.285151090826396, total_time=8.97
+[2020/12/22 20:39:23] steps=5, epe=50.86854305611918, total_time=6.60
+[2020/12/22 20:39:23] steps=6, epe=46.84821293386603, total_time=5.18
+[2020/12/22 20:39:23] steps=7, epe=64.28022799509094, total_time=4.23
+[2020/12/22 20:39:23] steps=8, epe=55.298315029642595, total_time=3.56
+[2020/12/22 20:39:23] steps=9, epe=51.22680203326185, total_time=3.05
+[2020/12/22 20:39:23] steps=10, epe=47.38974468083426, total_time=2.66
+[2020/12/22 20:39:24] steps=11, epe=44.2436871242048, total_time=2.35
+[2020/12/22 20:39:24] steps=12, epe=43.62638098436035, total_time=2.10
+[2020/12/22 20:39:24] steps=13, epe=40.6946775392105, total_time=1.89
+[2020/12/22 20:39:24] steps=14, epe=37.511446437224045, total_time=1.71
+[2020/12/22 20:39:24] steps=15, epe=37.73491864926721, total_time=1.56
+[2020/12/22 20:39:25] steps=16, epe=34.792426617185875, total_time=1.43
+[2020/12/22 20:39:25] steps=17, epe=32.616488742817516, total_time=1.32
+[2020/12/22 20:39:25] steps=18, epe=31.27098311679236, total_time=1.23
+[2020/12/22 20:39:25] steps=19, epe=31.073020504352264, total_time=1.14
+[2020/12/22 20:39:25] steps=20, epe=29.803274905938924, total_time=1.06
+[2020/12/22 20:39:31] steps=50, epe=30.562563537014984, total_time=0.31
+[2020/12/22 20:39:40] steps=100, epe=30.030982330565458, total_time=0.19
+[2020/12/22 20:39:50] steps=150, epe=28.06267770616433, total_time=0.19
+[2020/12/22 20:40:00] steps=200, epe=26.486046358797456, total_time=0.18
+[2020/12/22 20:40:10] steps=250, epe=30.602055309237617, total_time=0.21
+[2020/12/22 20:40:21] steps=300, epe=28.887864401882474, total_time=0.21
+[2020/12/22 20:40:30] steps=350, epe=27.91384516652434, total_time=0.19
+[2020/12/22 20:40:40] steps=400, epe=26.209221254373634, total_time=0.18
+[2020/12/22 20:40:49] steps=450, epe=25.590558304760787, total_time=0.18
+[2020/12/22 20:40:59] steps=500, epe=24.288514116255715, total_time=0.18
+[2020/12/22 20:41:08] steps=550, epe=24.231644943975166, total_time=0.19
+[2020/12/22 20:41:19] steps=600, epe=25.450045206082084, total_time=0.20
+[2020/12/22 20:41:28] steps=650, epe=25.150928813478348, total_time=0.20
+[2020/12/22 20:41:39] steps=700, epe=23.93812794764066, total_time=0.20
+[2020/12/22 20:41:49] steps=750, epe=23.139666429783013, total_time=0.20
+[2020/12/22 20:42:00] steps=800, epe=23.481788428405252, total_time=0.19
+[2020/12/22 20:42:09] steps=850, epe=22.398894077490816, total_time=0.19
+[2020/12/22 20:42:19] steps=900, epe=21.83720528210046, total_time=0.18
+[2020/12/22 20:42:29] steps=950, epe=20.73061937006149, total_time=0.21
+[2020/12/22 20:42:40] steps=1000, epe=28.93787019727585, total_time=0.21
+[2020/12/22 20:42:50] steps=1050, epe=30.542732276626335, total_time=0.19
+[2020/12/22 20:43:00] steps=1100, epe=29.042669450369214, total_time=0.19
+[2020/12/22 20:43:10] steps=1150, epe=nan, total_time=0.19
+[2020/12/22 20:43:20] steps=1200, epe=nan, total_time=0.20
+[2020/12/22 20:43:30] steps=1250, epe=nan, total_time=0.19
+[2020/12/22 20:43:40] steps=1300, epe=nan, total_time=0.18
+[2020/12/22 20:43:50] steps=1350, epe=nan, total_time=0.21
+[2020/12/22 20:44:01] steps=1400, epe=nan, total_time=0.20

@@ -4,15 +4,15 @@ from functools import lru_cache
 import struct
 
 # ======== PLEASE MODIFY ========
-things3d_root = r'path\to\your\FlyingThings3D_subset'
+things3d_root = r'/data2/opticalflow/datasets/FlyingThings/'
 
 def list_data(path = None, sub_type = 'clean'):
 	if path is None:
 		path = things3d_root
 	parts = ('train', ) # 'val')
 	sub_types = (sub_type,)
-	if sub_type == 'mixed':
-		sub_types = ('clean', 'final')
+	#if sub_type == 'mixed':
+	#	sub_types = ('clean', 'final')
 	orients = ('into_future', 'into_past')
 	cameras = ('left', 'right')
 	dataset = dict()

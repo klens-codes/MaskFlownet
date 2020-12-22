@@ -5,7 +5,7 @@ import struct
 import glob
 
 # ======== PLEASE MODIFY ========
-chairsSDHom_root = r'/home/mask/datasets/ChairsSDHom_extended/'
+chairsSDHom_root = r'/data2/opticalflow/datasets/ChairsSDHom_extended'
 
 def list_data(path = None,):
 	if path is None:
@@ -18,6 +18,8 @@ def list_data(path = None,):
 	dataset['image_1'].extend(glob.glob(os.path.join(path,"val", "*img_1.png")))
 	dataset['flow'] = glob.glob(os.path.join(path,"train","*.flo"))
 	dataset['flow'].extend(glob.glob(os.path.join(path,"val","*.flo")))
+	dataset['mask'] = glob.glob(os.path.join(path,"train","*occ_01.png"))
+	dataset['mask'] = glob.glob(os.path.join(path,"val","*occ_01.png"))
 	'''for part in parts:
 		path_image = os.path.join(path, part, 'image_' + sub_type, camera)
 		path_flow = os.path.join(path, part, 'flow', camera, orient)
@@ -67,5 +69,3 @@ def load(fname):
 
 if __name__ == '__main__':
 	dataset = list_data()
-	print(len(dataset['flow']))
-	print(dataset['flow'][-1])(mask)

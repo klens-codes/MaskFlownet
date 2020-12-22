@@ -1,0 +1,4 @@
+(base) [01;32mpatel@ludwig[00m:[01;34m/data2/opticalflow/rnd/opticalflow/maskflownet/MaskFlownet[00m$ conda activate /data2/opticalflow/rnd/envs/
+Maskflownet_pytorch/ flownet2/            hella/               imgtrans/            maskflownet/         maskflownet.pytorch/ maskflownet_mxnet/   raft/                vivbase/
+(base) [01;32mpatel@ludwig[00m:[01;34m/data2/opticalflow/rnd/opticalflow/maskflownet/MaskFlownet[00m$ conda activate /data2/opticalflow/rnd/envs/maskflownet_mxnet/
+(maskflownet_mxnet) [01;32mpatel@ludwig[00m:[01;34m/data2/opticalflow/rnd/opticalflow/maskflownet/MaskFlownet[00m$ [K(maskflownet_mxnet) [01;32mpatel@ludwig[00m:[01;34m/data2/opticalflow/rnd/opticalflow/maskflownet/MaskFlownet[00m$ 

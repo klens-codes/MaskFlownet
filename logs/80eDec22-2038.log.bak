@@ -1,0 +1,2 @@
+[2020/12/22 20:38:27] start=0, train=78563, val=450, host=ludwig, batch=33
+[2020/12/22 20:38:27] batch=16, config='MaskFlownet_ft.yaml', dataset_cfg='things3d.yaml', shard=1, gpu_device='1,2,3', checkpoint='5adNov03', clear_steps=True, network='MaskFlownet', debug=False, valid=False, predict=False, resize=''

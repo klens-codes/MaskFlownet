@@ -1,0 +1,3 @@
+[2020/12/21 22:18:25] start=0, train=21670, val=224, host=ludwig, batch=1
+[2020/12/21 22:18:25] batch=16, config='MaskFlownet_ft.yaml', dataset_cfg='chairsSDHom.yaml', shard=1, gpu_device='0', checkpoint='5adNov03', clear_steps=True, network='MaskFlownet', debug=False, valid=False, predict=False, resize=''
+[2020/12/21 22:18:35] steps=1, epe=32.57754867122618, total_time=0.00
